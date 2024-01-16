@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>twoSum</title>
+  </head>
+  <body>
+    <script>
+      let nums1 = [3, 3];
+    //   let nums1 = [3,2,4];
+      let target1 = 6;
+
+      function twoSum(nums, target) {
+        var result = [];
+        for (var i = 0; i <= nums.length; i++) {
+          for (var j = 1; j <= nums.length; j++) {
+            if (nums[i] + nums[j + i ] == target) {
+              if (nums[i] == nums[j + i]) {
+                return [nums.indexOf(nums[i]), nums.indexOf(nums[i])+1];
+              } else {
+                return [nums.indexOf(nums[i]), nums.indexOf(nums[j + i])];
+              }
+            }
+          }
+        }
+        return result;
+      }
+
+      twoSum(nums1, target1);
+      console.log("==>", twoSum(nums1, target1));
+    </script>
+  </body>
+</html>
