@@ -1,16 +1,15 @@
 // Problem: https://leetcode.com/problems/contains-duplicate/
 
 function containsDuplicate(nums: number[]): boolean {
-    for (let i = 0; i < nums.length; i++) {
-        for (let j = i + 1; j < nums.length; j++) {
-            if (nums[i] === nums[j]) {
-                return true;
-            }
-        }
+  const store = new Map();
+  for (let n of nums) {
+    if (store.has(n)) return true
+    else {
+      store.set(n, 1);
     }
-    return false;
+  }
+  return false
 };
-
 
 function testContainsDuplicate(): void {
   let testCases = [
